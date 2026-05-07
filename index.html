@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Visiting Angels Senior Home Care Winter Park &mdash; Orlando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fbff;color:#0a1428;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes slideLft{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+@keyframes slideRgt{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(29,78,216,.5)}60%{box-shadow:0 0 0 18px rgba(29,78,216,0)}}
+@keyframes gradBG{0%,100%{background-position:0% 60%}50%{background-position:100% 40%}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes ring-expand{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+@keyframes glow-pulse{0%,100%{opacity:.4}50%{opacity:.8}}
+.animate{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+.animate.visible{opacity:1;transform:none}
+.animate.from-left{transform:translateX(-22px)}
+.animate.from-right{transform:translateX(22px)}
+.animate.scale-in{transform:scale(.94);opacity:0}
+.animate.from-left.visible,.animate.from-right.visible,.animate.scale-in.visible{transform:none;opacity:1}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#1d4ed8;margin-bottom:12px;display:block}
+.section-h2{font-size:clamp(26px,4.5vw,44px);font-weight:800;line-height:1.1;margin-bottom:18px;color:#0a1428;letter-spacing:-.03em}
+.section-sub{font-size:16px;opacity:.6;max-width:540px;line-height:1.75;margin-bottom:44px;color:#0a1428}
+.accent-line{width:44px;height:3px;background:#1d4ed8;border-radius:2px;margin-bottom:16px}
+.gradient-text{background:linear-gradient(135deg,#1d4ed8,#0a1428);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.faq-q{width:100%;background:none;border:none;font-size:15px;font-weight:600;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit;text-align:left;color:#0a1428}
+.faq-icon{font-size:20px;flex-shrink:0;transition:transform .28s ease;font-weight:400;line-height:1;color:#1d4ed8}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{font-size:14px;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;padding:0;opacity:.7;color:#0a1428}
+.faq-item.open .faq-a{max-height:280px;padding:0 0 20px}
+.faq-item{border-bottom:1px solid rgba(10,20,40,.1)}
+.bform{max-width:700px;margin:0 auto;background:#e8f2ff;border:1px solid rgba(10,20,40,.1);border-radius:20px;padding:48px;text-align:left;box-shadow:0 2px 8px rgba(0,0,0,.06),0 12px 32px rgba(0,0,0,.08)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.75;color:#0a1428}
+input,select,textarea{padding:12px 16px;border:1.5px solid rgba(10,20,40,.12);border-radius:10px;font-size:14px;font-family:inherit;outline:none;width:100%;transition:border-color .2s,box-shadow .2s;background:rgba(10,20,40,.03);color:#0a1428}
+input:focus,select:focus,textarea:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.12)}
+.subtn{width:100%;border:none;padding:16px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:6px;font-family:inherit;transition:opacity .2s,transform .15s;background:#1d4ed8;color:#f8fbff}
+.subtn:hover{opacity:.88;transform:translateY(-1px)}
+#sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:9998;display:flex;opacity:0;transform:translateY(100%);transition:opacity .35s ease,transform .35s ease;pointer-events:none}
+#sticky-cta a{flex:1;padding:16px;text-align:center;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px}
+.mob-float{display:none;position:fixed;bottom:80px;right:20px;z-index:9997;width:56px;height:56px;border-radius:50%;background:#1d4ed8;box-shadow:0 4px 24px rgba(29,78,216,.5);align-items:center;justify-content:center;font-size:22px;animation:pulse 3s ease-out infinite}
+.cursor-spotlight{position:fixed;width:480px;height:480px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(29,78,216,.06) 0%,transparent 70%);transform:translate(-50%,-50%);transition:opacity .5s ease;opacity:0;will-change:left,top}
+.acard,.gcard,.spcard,.edwhy,.stwy,.schip,.mwhy,.bcard,.gwhy{position:relative;overflow:hidden}
+.acard::after,.gcard::after,.spcard::after,.edwhy::after,.schip::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(29,78,216,.12) 50%,transparent 65%);transform:translateX(-150%) skewX(-15deg);transition:transform .65s ease;pointer-events:none;z-index:2}
+.acard:hover::after,.gcard:hover::after,.spcard:hover::after,.edwhy:hover::after,.schip:hover::after{transform:translateX(200%) skewX(-15deg)}
+.tilt-card{transition:transform .3s ease,box-shadow .3s ease;will-change:transform}
+@media(max-width:768px){
+  .mob-float{display:flex}
+  #sticky-cta{font-size:13px;pointer-events:auto}
+  .frow{grid-template-columns:1fr}
+  .bform{padding:28px 18px}
+  body{padding-bottom:80px}
+  .cursor-spotlight{display:none}
+}
+nav{position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 clamp(20px,5vw,64px);height:68px;background:rgba(248,251,255,.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(10,20,40,.08)}
+.nlogo{font-size:16px;font-weight:800;color:#1d4ed8;letter-spacing:-.025em;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nright{display:flex;gap:10px;align-items:center}
+.nbtn{background:#1d4ed8;color:#f8fbff;padding:9px 22px;border-radius:9px;font-weight:700;font-size:13px;box-shadow:0 2px 12px rgba(29,78,216,.3);transition:opacity .2s}
+.nbtn:hover{opacity:.88}
+.nghost{border:1.5px solid rgba(10,20,40,.08);color:#0a1428;padding:8px 18px;border-radius:9px;font-size:13px;font-weight:500;transition:border-color .2s}
+.nghost:hover{border-color:#1d4ed8;color:#1d4ed8}
+.hero-wrap{min-height:94vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:110px clamp(24px,6vw,80px) 80px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-25%;left:50%;transform:translateX(-50%);width:860px;height:640px;background:radial-gradient(ellipse,rgba(29,78,216,.09) 0%,transparent 70%);animation:glow-pulse 7s ease-in-out infinite;pointer-events:none}
+.hero-line{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(10,20,40,.03) 79px,rgba(10,20,40,.03) 80px);pointer-events:none}
+.issue-label{display:inline-flex;align-items:center;gap:8px;background:rgba(29,78,216,.08);border:1px solid rgba(29,78,216,.2);padding:8px 20px;border-radius:4px;font-size:11px;font-weight:700;color:#1d4ed8;margin-bottom:28px;letter-spacing:.1em;text-transform:uppercase;animation:fadeIn .7s both}
+.cover-h1{font-size:clamp(44px,9vw,110px);font-weight:900;line-height:1.01;letter-spacing:-.055em;margin-bottom:22px;color:#0a1428;animation:fadeUp .8s .1s both}
+.cover-sub{font-size:clamp(15px,2.2vw,19px);color:rgba(10,20,40,.55);max-width:560px;margin:0 auto 40px;line-height:1.8;animation:fadeUp .8s .2s both}
+.cover-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .3s both}
+.cbtn-p{background:#1d4ed8;color:#f8fbff;padding:16px 48px;border-radius:10px;font-size:16px;font-weight:800;display:inline-block;box-shadow:0 6px 28px rgba(29,78,216,.35);animation:pulse 3s ease-out infinite;transition:opacity .2s}
+.cbtn-p:hover{opacity:.9}
+.cbtn-s{border:1.5px solid rgba(10,20,40,.08);color:#0a1428;padding:15px 36px;border-radius:10px;font-size:15px;font-weight:600;display:inline-block;transition:border-color .2s,color .2s}
+.cbtn-s:hover{border-color:#1d4ed8;color:#1d4ed8}
+.ed-trust-bar{display:flex;align-items:center;justify-content:center;gap:0;background:#e8f2ff;border-top:1px solid rgba(10,20,40,.08);border-bottom:1px solid rgba(10,20,40,.08);overflow:hidden}
+.edtrust{display:flex;align-items:center;gap:8px;padding:14px 28px;border-right:1px solid rgba(10,20,40,.08);font-size:13px;font-weight:600;color:#0a1428;white-space:nowrap}
+.edrow{display:grid;grid-template-columns:56px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid rgba(10,20,40,.08);align-items:start;transition:background .2s;border-radius:8px}
+.edrow:hover{background:rgba(29,78,216,.03)}
+.ednum{font-size:13px;font-weight:800;letter-spacing:.06em;color:#1d4ed8;padding-top:4px}
+.edbody{}
+.edwhy{padding:28px;background:#e8f2ff;border:1px solid rgba(10,20,40,.08);border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.06),0 12px 32px rgba(0,0,0,.08);transition:transform .3s,box-shadow .3s}
+.edwhy:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.1)}
+.ed-2col{display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:start}
+.edside{position:sticky;top:88px}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.csec{text-align:center;padding:90px 24px;background:#d4e8ff}
+.big-phone{font-size:clamp(26px,5vw,56px);font-weight:900;color:#1d4ed8;display:block;margin:18px 0 10px;letter-spacing:-.035em;transition:opacity .2s}
+.big-phone:hover{opacity:.75}
+footer{background:#e8f2ff;color:rgba(10,20,40,.55);text-align:center;padding:28px 24px;font-size:12px;border-top:1px solid rgba(10,20,40,.08)}
+@media(max-width:768px){
+  .nghost,.ed-2col{display:block}
+  .ed-2col>*+*{margin-top:32px}
+  .edside{position:static}
+  .why-grid{grid-template-columns:1fr}
+  .edtrust:nth-child(n+3){display:none}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nlogo">Visiting Angels Senior Home Care Winter Park</div>
+  <div class="nright">
+    <a href="#booking" class="nbtn mag-btn">Book Now</a>
+    <a href="tel:4072369997" class="nghost">&#128222; (407) 236-9997</a>
+  </div>
+</nav>
+<div id="sticky-cta">
+  <a href="tel:4072369997" style="background:#1d4ed8;color:#f8fbff">&#128222; Call Now</a>
+  <a href="#booking" style="background:#e8f2ff;color:#1d4ed8;border-top:1px solid rgba(10,20,40,.08)">&#128197; Book Appointment</a>
+</div>
+<a href="tel:4072369997" class="mob-float">&#128222;</a>
+<div class="hero-wrap">
+  <div class="hero-glow" data-parallax="0.2"></div>
+  <div class="hero-line"></div>
+  <div style="position:relative;z-index:1;max-width:840px">
+    <div class="issue-label">&#11088; 4.7/5 &nbsp;&#183;&nbsp; 44 Reviews &nbsp;&#183;&nbsp; Orlando</div>
+    <h1 class="cover-h1">Orlando Senior Home Care</h1>
+    <p class="cover-sub">Helping seniors live independently with dignity, safety, and professional support.</p>
+    <div class="cover-btns">
+      <a href="#booking" class="cbtn-p mag-btn">&#128197; Book Appointment</a>
+      <a href="tel:4072369997" class="cbtn-s">&#128222; (407) 236-9997</a>
+    </div>
+  </div>
+</div>
+<div class="ed-trust-bar"><div class="edtrust"><span style="font-size:18px">✅</span><span style="font-size:12px;font-weight:600;color:rgba(10,20,40,.55)">Background-Checked</span></div><div class="edtrust"><span style="font-size:18px">🛡️</span><span style="font-size:12px;font-weight:600;color:rgba(10,20,40,.55)">Licensed &amp; Bonded</span></div><div class="edtrust"><span style="font-size:18px">📞</span><span style="font-size:12px;font-weight:600;color:rgba(10,20,40,.55)">Regular Family Updates</span></div><div class="edtrust"><span style="font-size:18px">📍</span><span style="font-size:12px;font-weight:600;color:rgba(10,20,40,.55)">Serving Orlando</span></div></div>
+<div id="services" style="padding:90px clamp(24px,6vw,80px)">
+  <div style="max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:start" class="ed-2col">
+    <div>
+      <div class="accent-line animate"></div>
+      <span class="eyebrow animate">What We Do</span>
+      <h2 class="section-h2 animate">Our Services in Orlando</h2>
+      <div style="margin-top:32px"><div class="edrow edwhy tilt-card animate" style="animation-delay:0.00s"><div class="ednum" style="color:#1d4ed8">01</div><div class="edbody"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="font-size:22px;animation:float 4s ease-in-out 0.0s infinite">🤝</span><h3 style="font-size:19px;font-weight:700;letter-spacing:-.015em;color:#0a1428">Personal Care Assistance</h3></div><p style="font-size:14px;line-height:1.8;color:rgba(10,20,40,.55);max-width:500px;margin-bottom:12px">Friendly, reliable companionship and social engagement for seniors in Orlando.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#1d4ed8;letter-spacing:.06em;text-transform:uppercase;border-bottom:1.5px solid #1d4ed8;padding-bottom:2px">Book this &#8594;</a></div></div><div class="edrow edwhy tilt-card animate" style="animation-delay:0.07s"><div class="ednum" style="color:#1d4ed8">02</div><div class="edbody"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="font-size:22px;animation:float 4s ease-in-out 0.4s infinite">🏠</span><h3 style="font-size:19px;font-weight:700;letter-spacing:-.015em;color:#0a1428">Meal Preparation</h3></div><p style="font-size:14px;line-height:1.8;color:rgba(10,20,40,.55);max-width:500px;margin-bottom:12px">Help with bathing, dressing, and daily routines — always with dignity and respect.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#1d4ed8;letter-spacing:.06em;text-transform:uppercase;border-bottom:1.5px solid #1d4ed8;padding-bottom:2px">Book this &#8594;</a></div></div><div class="edrow edwhy tilt-card animate" style="animation-delay:0.14s"><div class="ednum" style="color:#1d4ed8">03</div><div class="edbody"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="font-size:22px;animation:float 4s ease-in-out 0.8s infinite">🚗</span><h3 style="font-size:19px;font-weight:700;letter-spacing:-.015em;color:#0a1428">Light Housekeeping</h3></div><p style="font-size:14px;line-height:1.8;color:rgba(10,20,40,.55);max-width:500px;margin-bottom:12px">Safe rides to appointments, grocery runs, and social visits in Orlando.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#1d4ed8;letter-spacing:.06em;text-transform:uppercase;border-bottom:1.5px solid #1d4ed8;padding-bottom:2px">Book this &#8594;</a></div></div><div class="edrow edwhy tilt-card animate" style="animation-delay:0.21s"><div class="ednum" style="color:#1d4ed8">04</div><div class="edbody"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="font-size:22px;animation:float 4s ease-in-out 1.2s infinite">🍽️</span><h3 style="font-size:19px;font-weight:700;letter-spacing:-.015em;color:#0a1428">Medication Reminders</h3></div><p style="font-size:14px;line-height:1.8;color:rgba(10,20,40,.55);max-width:500px;margin-bottom:12px">Nutritious meal planning and prep tailored to dietary needs and preferences.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#1d4ed8;letter-spacing:.06em;text-transform:uppercase;border-bottom:1.5px solid #1d4ed8;padding-bottom:2px">Book this &#8594;</a></div></div><div class="edrow edwhy tilt-card animate" style="animation-delay:0.28s"><div class="ednum" style="color:#1d4ed8">05</div><div class="edbody"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="font-size:22px;animation:float 4s ease-in-out 1.6s infinite">👨‍👩‍👧</span><h3 style="font-size:19px;font-weight:700;letter-spacing:-.015em;color:#0a1428">Companionship Services</h3></div><p style="font-size:14px;line-height:1.8;color:rgba(10,20,40,.55);max-width:500px;margin-bottom:12px">Regular updates and care planning with the whole family — we keep everyone informed.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#1d4ed8;letter-spacing:.06em;text-transform:uppercase;border-bottom:1.5px solid #1d4ed8;padding-bottom:2px">Book this &#8594;</a></div></div><div class="edrow edwhy tilt-card animate" style="animation-delay:0.35s"><div class="ednum" style="color:#1d4ed8">06</div><div class="edbody"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="font-size:22px;animation:float 4s ease-in-out 2.0s infinite">🌿</span><h3 style="font-size:19px;font-weight:700;letter-spacing:-.015em;color:#0a1428">Transportation Assistance</h3></div><p style="font-size:14px;line-height:1.8;color:rgba(10,20,40,.55);max-width:500px;margin-bottom:12px">Planned or on-call relief for family caregivers. We've got things covered.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#1d4ed8;letter-spacing:.06em;text-transform:uppercase;border-bottom:1.5px solid #1d4ed8;padding-bottom:2px">Book this &#8594;</a></div></div></div>
+    </div>
+    <div class="edside"><div class="animate scale-in" style="background:#e8f2ff;border:1px solid rgba(10,20,40,.08);border-radius:18px;padding:40px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06),0 12px 32px rgba(0,0,0,.08)"><div style="font-size:56px;font-weight:900;color:#1d4ed8;line-height:1;letter-spacing:-.04em" data-target="44">44</div><div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(10,20,40,.55);margin:8px 0 24px">Google Reviews</div><div style="width:40px;height:2px;background:#1d4ed8;margin:0 auto 20px;border-radius:1px"></div><div style="font-size:36px;font-weight:900;color:#1d4ed8;letter-spacing:-.03em">4.7</div><div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(10,20,40,.55);margin-top:6px">Star Rating</div><div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(10,20,40,.08);font-size:14px;font-weight:600;color:rgba(10,20,40,.55)">&#128205; Orlando</div><a href="#booking" class="mag-btn" style="display:block;margin-top:20px;background:#1d4ed8;color:#f8fbff;padding:13px;border-radius:10px;font-size:14px;font-weight:700;animation:pulse 3s ease-out infinite">Book Now &#8594;</a></div></div>
+  </div>
+</div>
+<div style="background:#e8f2ff;border-top:1px solid rgba(10,20,40,.08);padding:90px clamp(24px,6vw,80px)" id="why">
+  <div style="max-width:1060px;margin:0 auto">
+    <div class="accent-line animate"></div>
+    <span class="eyebrow animate">Why Choose Us</span>
+    <h2 class="section-h2 animate">What Makes Visiting Angels Senior Home Care Winter Park Different</h2>
+    <div class="why-grid" style="margin-top:36px"><div class="edwhy tilt-card animate" style="animation-delay:0.00s"><div style="font-size:28px;margin-bottom:12px;animation:float 4s ease-in-out 0.0s infinite">✅</div><strong style="font-size:15px;font-weight:700;display:block;margin-bottom:7px;color:#0a1428">Background-Checked</strong><p style="font-size:13px;line-height:1.7;color:rgba(10,20,40,.55)">Every caregiver is fully screened, background-checked, and reference-verified.</p></div><div class="edwhy tilt-card animate" style="animation-delay:0.08s"><div style="font-size:28px;margin-bottom:12px;animation:float 4s ease-in-out 0.3s infinite">📞</div><strong style="font-size:15px;font-weight:700;display:block;margin-bottom:7px;color:#0a1428">Family Communication</strong><p style="font-size:13px;line-height:1.7;color:rgba(10,20,40,.55)">Regular updates so the whole family stays informed and at peace.</p></div><div class="edwhy tilt-card animate" style="animation-delay:0.16s"><div style="font-size:28px;margin-bottom:12px;animation:float 4s ease-in-out 0.7s infinite">🕐</div><strong style="font-size:15px;font-weight:700;display:block;margin-bottom:7px;color:#0a1428">Flexible Hours</strong><p style="font-size:13px;line-height:1.7;color:rgba(10,20,40,.55)">Part-time, full-time, overnight, or on-call — we match your schedule.</p></div><div class="edwhy tilt-card animate" style="animation-delay:0.24s"><div style="font-size:28px;margin-bottom:12px;animation:float 4s ease-in-out 1.0s infinite">❤️</div><strong style="font-size:15px;font-weight:700;display:block;margin-bottom:7px;color:#0a1428">Dignity-First Care</strong><p style="font-size:13px;line-height:1.7;color:rgba(10,20,40,.55)">Every interaction is guided by respect, patience, and genuine compassion.</p></div></div>
+  </div>
+</div>
+<div style="padding:90px clamp(24px,6vw,80px);background:#d4e8ff" id="process">
+  <div style="max-width:700px;margin:0 auto">
+    <div class="accent-line animate"></div>
+    <span class="eyebrow animate">How It Works</span>
+    <h2 class="section-h2 animate">Simple Process</h2>
+    <div style="margin-top:36px"><div class="animate" style="display:grid;grid-template-columns:40px 1fr;gap:20px;animation-delay:0.00s"><div style="width:40px;height:40px;border-radius:50%;background:#1d4ed8;color:#f8fbff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;box-shadow:0 4px 16px rgba(29,78,216,.3)">1</div><div style="padding-top:6px"><strong style="font-size:15px;font-weight:700;display:block;margin-bottom:4px;color:#0a1428">Free Care Consultation</strong><p style="font-size:13px;line-height:1.7;color:rgba(10,20,40,.55)">We meet with your family to understand needs, preferences, and goals.</p></div></div><div style="width:2px;height:32px;background:linear-gradient(#1d4ed8,rgba(29,78,216,.15));margin:6px 0 6px 19px"></div><div class="animate" style="display:grid;grid-template-columns:40px 1fr;gap:20px;animation-delay:0.10s"><div style="width:40px;height:40px;border-radius:50%;background:#1d4ed8;color:#f8fbff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;box-shadow:0 4px 16px rgba(29,78,216,.3)">2</div><div style="padding-top:6px"><strong style="font-size:15px;font-weight:700;display:block;margin-bottom:4px;color:#0a1428">Matched with a Caregiver</strong><p style="font-size:13px;line-height:1.7;color:rgba(10,20,40,.55)">We place a compatible, fully vetted caregiver in Orlando who fits your loved one.</p></div></div><div style="width:2px;height:32px;background:linear-gradient(#1d4ed8,rgba(29,78,216,.15));margin:6px 0 6px 19px"></div><div class="animate" style="display:grid;grid-template-columns:40px 1fr;gap:20px;animation-delay:0.20s"><div style="width:40px;height:40px;border-radius:50%;background:#1d4ed8;color:#f8fbff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;box-shadow:0 4px 16px rgba(29,78,216,.3)">3</div><div style="padding-top:6px"><strong style="font-size:15px;font-weight:700;display:block;margin-bottom:4px;color:#0a1428">Ongoing Support</strong><p style="font-size:13px;line-height:1.7;color:rgba(10,20,40,.55)">Regular family updates, flexible scheduling, and adjustments as needs evolve.</p></div></div></div>
+  </div>
+</div>
+<section style="background:#e8f2ff;padding:90px 24px;overflow:hidden" id="area">
+<div style="max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+  <div>
+    <span class="eyebrow animate">Service Coverage</span>
+    <h2 class="section-h2 animate">Proudly Serving<br><span style="color:#1d4ed8">Orlando</span></h2>
+    <p class="animate" style="font-size:15px;opacity:.62;line-height:1.8;color:#0a1428;margin-bottom:28px">Professional, on-time service across Orlando and all surrounding communities. Local experts — not a call center.</p>
+    <div class="animate" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px"><span style="display:inline-block;padding:6px 14px;background:rgba(29,78,216,.1);border:1px solid rgba(29,78,216,.2);border-radius:20px;font-size:12px;font-weight:600;color:#1d4ed8;margin:4px">Orlando</span><span style="display:inline-block;padding:6px 14px;background:rgba(29,78,216,.1);border:1px solid rgba(29,78,216,.2);border-radius:20px;font-size:12px;font-weight:600;color:#1d4ed8;margin:4px">Kissimmee</span><span style="display:inline-block;padding:6px 14px;background:rgba(29,78,216,.1);border:1px solid rgba(29,78,216,.2);border-radius:20px;font-size:12px;font-weight:600;color:#1d4ed8;margin:4px">Winter Park</span><span style="display:inline-block;padding:6px 14px;background:rgba(29,78,216,.1);border:1px solid rgba(29,78,216,.2);border-radius:20px;font-size:12px;font-weight:600;color:#1d4ed8;margin:4px">Sanford</span><span style="display:inline-block;padding:6px 14px;background:rgba(29,78,216,.1);border:1px solid rgba(29,78,216,.2);border-radius:20px;font-size:12px;font-weight:600;color:#1d4ed8;margin:4px">Oviedo</span></div>
+    <a href="tel:4072369997" style="display:inline-flex;align-items:center;gap:8px;background:#1d4ed8;color:#fff;padding:12px 28px;border-radius:50px;font-size:14px;font-weight:700;margin-top:24px;box-shadow:0 4px 16px rgba(29,78,216,.3);transition:opacity .2s">&#128222; Call for Availability</a>
+  </div>
+  <div class="animate scale-in" style="display:flex;align-items:center;justify-content:center">
+    <div style="position:relative;width:220px;height:220px">
+      <div style="position:absolute;inset:0;border-radius:50%;border:1.5px solid #1d4ed8;animation:ring-expand 3s ease-out infinite;opacity:.7"></div>
+      <div style="position:absolute;inset:0;border-radius:50%;border:1.5px solid #1d4ed8;animation:ring-expand 3s ease-out 1s infinite;opacity:.7"></div>
+      <div style="position:absolute;inset:0;border-radius:50%;border:1.5px solid #1d4ed8;animation:ring-expand 3s ease-out 2s infinite;opacity:.7"></div>
+      <div style="position:absolute;inset:30px;border-radius:50%;background:rgba(29,78,216,.06);border:1.5px solid rgba(29,78,216,.2)"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px">
+        <div style="font-size:32px;animation:float 4s ease-in-out infinite">&#128205;</div>
+        <div style="font-size:14px;font-weight:800;color:#1d4ed8;letter-spacing:-.01em;text-align:center;max-width:120px;line-height:1.2">Orlando</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.45;color:#0a1428">Service Area</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<style>
+@keyframes ring-expand{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.8);opacity:0}}
+</style>
+<section style="background:#f8fbff;padding:90px 24px" id="reviews"><div style="max-width:1000px;margin:0 auto"><p class="eyebrow animate" style="color:#1d4ed8">What Customers Say</p><h2 class="section-h2 animate" style="color:#0a1428">Google Reviews</h2><div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap" class="animate"><span style="color:#1d4ed8;font-size:22px;letter-spacing:2px">★★★★★</span><span style="font-size:18px;font-weight:700;color:#0a1428">4.7/5</span><span style="opacity:.4">·</span><span style="color:rgba(10,20,40,.72)">44 reviews</span><a href="https://www.google.com/search?q=Visiting+Angels+Senior+Home+Care+Winter+Park" target="_blank" style="color:#1d4ed8;font-size:13px;border:1px solid #1d4ed8;padding:4px 14px;border-radius:20px;margin-left:auto">See on Google &#8599;</a></div><div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px" class="animate"><span style="background:rgba(29,78,216,.08);border:1px solid rgba(29,78,216,.15);padding:4px 12px;border-radius:20px;font-size:12px;color:#1d4ed8">compassionate staff</span> <span style="background:rgba(29,78,216,.08);border:1px solid rgba(29,78,216,.15);padding:4px 12px;border-radius:20px;font-size:12px;color:#1d4ed8">reliable and consistent</span> <span style="background:rgba(29,78,216,.08);border:1px solid rgba(29,78,216,.15);padding:4px 12px;border-radius:20px;font-size:12px;color:#1d4ed8">great communication</span> <span style="background:rgba(29,78,216,.08);border:1px solid rgba(29,78,216,.15);padding:4px 12px;border-radius:20px;font-size:12px;color:#1d4ed8">peace of mind</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px"><div class="rcard animate" style="background:#e8f2ff;border:1px solid rgba(10,20,40,.1);border-radius:16px;padding:28px 24px"><div style="margin-bottom:12px"><span style="color:#1d4ed8;font-size:22px;letter-spacing:2px">★★★★★</span></div><p style="font-size:14px;line-height:1.75;color:rgba(10,20,40,.72);margin-bottom:18px">&#8220;We recently worked with Visiting Angels to assist my family member post surgery and I am incredibly pleased with the care and attention we received. Scheduling was very easy, and schedule changes were completed quickly and easily as needed....&#8221;</p><div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#1d4ed8;opacity:.7">VIA GOOGLE REVIEWS</div></div><div class="rcard animate" style="background:#e8f2ff;border:1px solid rgba(10,20,40,.1);border-radius:16px;padding:28px 24px"><div style="margin-bottom:12px"><span style="color:#1d4ed8;font-size:22px;letter-spacing:2px">★★★★★</span></div><p style="font-size:14px;line-height:1.75;color:rgba(10,20,40,.72);margin-bottom:18px">&#8220;Visiting Angels has been a godsend.  When my mother became completely bed bound and required care during the day, I hired them to come in twice a day to look after her needs while I was working.  We have had nothing but positive experiences...&#8221;</p><div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#1d4ed8;opacity:.7">VIA GOOGLE REVIEWS</div></div><div class="rcard animate" style="background:#e8f2ff;border:1px solid rgba(10,20,40,.1);border-radius:16px;padding:28px 24px"><div style="margin-bottom:12px"><span style="color:#1d4ed8;font-size:22px;letter-spacing:2px">★★★★★</span></div><p style="font-size:14px;line-height:1.75;color:rgba(10,20,40,.72);margin-bottom:18px">&#8220;Visiting Angels is a very professional home care agency, Geared to excellent standard of care,&#8221;</p><div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#1d4ed8;opacity:.7">VIA GOOGLE REVIEWS</div></div></div></div></section>
+<div id="faq" style="padding:90px 24px;background:#e8f2ff;border-top:1px solid rgba(10,20,40,.08)">
+  <div style="max-width:700px;margin:0 auto">
+    <div class="accent-line animate"></div>
+    <span class="eyebrow animate">FAQ</span>
+    <h2 class="section-h2 animate">Common Questions</h2>
+    <div class="faq-item animate" style="animation-delay:0.00s;border-bottom:1px solid rgba(10,20,40,.1)"><button class="faq-q" onclick="gFaq(this)" style="color:#0a1428"><span>How do I find the right caregiver?</span><span class="faq-icon" style="color:#1d4ed8">+</span></button><div class="faq-a" style="color:#0a1428">We conduct a thorough intake to understand your loved one's needs, preferences, and personality. Then we match accordingly.</div></div><div class="faq-item animate" style="animation-delay:0.06s;border-bottom:1px solid rgba(10,20,40,.1)"><button class="faq-q" onclick="gFaq(this)" style="color:#0a1428"><span>What if my loved one doesn't connect with the caregiver?</span><span class="faq-icon" style="color:#1d4ed8">+</span></button><div class="faq-a" style="color:#0a1428">We take compatibility seriously. If the match isn't working, we'll make a change promptly — no questions asked.</div></div><div class="faq-item animate" style="animation-delay:0.12s;border-bottom:1px solid rgba(10,20,40,.1)"><button class="faq-q" onclick="gFaq(this)" style="color:#0a1428"><span>Are caregivers background-checked?</span><span class="faq-icon" style="color:#1d4ed8">+</span></button><div class="faq-a" style="color:#0a1428">Yes. Every caregiver undergoes a comprehensive background check, reference verification, and is fully bonded and insured.</div></div><div class="faq-item animate" style="animation-delay:0.18s;border-bottom:1px solid rgba(10,20,40,.1)"><button class="faq-q" onclick="gFaq(this)" style="color:#0a1428"><span>Can care hours be adjusted?</span><span class="faq-icon" style="color:#1d4ed8">+</span></button><div class="faq-a" style="color:#0a1428">Absolutely. We offer flexible scheduling — part-time, full-time, overnight, and on-call. We adjust as needs change.</div></div><div class="faq-item animate" style="animation-delay:0.24s;border-bottom:1px solid rgba(10,20,40,.1)"><button class="faq-q" onclick="gFaq(this)" style="color:#0a1428"><span>How do you keep the family informed?</span><span class="faq-icon" style="color:#1d4ed8">+</span></button><div class="faq-a" style="color:#0a1428">We provide regular updates and maintain an open line of communication with family members throughout the caregiving relationship.</div></div>
+  </div>
+</div>
+<div id="booking" style="padding:90px 24px;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(29,78,216,.05),transparent 70%)">
+  <div style="max-width:780px;margin:0 auto;text-align:center">
+    <div class="accent-line animate" style="margin:0 auto 12px"></div>
+    <span class="eyebrow animate">Get Started</span>
+    <h2 class="section-h2 animate">Book Your Appointment</h2>
+    <p class="animate section-sub" style="margin:0 auto 40px">Fill out the form — confirmed within 2 hours. Or call <a href="tel:4072369997" style="color:#1d4ed8;font-weight:600">(407) 236-9997</a></p>
+    <div class="bform animate">
+      <div class="frow">
+        <div class="fg"><label style="color:#1d4ed8">Your Name</label><input type="text" id="fn" placeholder="John Smith" required style="border-color:rgba(10,20,40,.15);background:rgba(10,20,40,.04);color:#0a1428"></div>
+        <div class="fg"><label style="color:#1d4ed8">Phone Number</label><input type="tel" id="fp" placeholder="(555) 000-0000" required style="border-color:rgba(10,20,40,.15);background:rgba(10,20,40,.04);color:#0a1428"></div>
+      </div>
+      <div class="fg"><label style="color:#1d4ed8">Email</label><input type="email" id="fe" placeholder="you@email.com" style="border-color:rgba(10,20,40,.15);background:rgba(10,20,40,.04);color:#0a1428"></div>
+      <div class="fg"><label style="color:#1d4ed8">Service Needed</label>
+        <select id="fs" style="border-color:rgba(10,20,40,.15);background:#e8f2ff;color:#0a1428">
+          <option value="">Select a service...</option><option>Personal Care Assistance</option><option>Meal Preparation</option><option>Light Housekeeping</option><option>Medication Reminders</option><option>Companionship Services</option><option>Transportation Assistance</option><option>Not sure — need consultation</option>
+        </select>
+      </div>
+      <div class="frow">
+        <div class="fg"><label style="color:#1d4ed8">Preferred Date</label><input type="date" id="fd" style="border-color:rgba(10,20,40,.15);background:rgba(10,20,40,.04);color:#0a1428"></div>
+        <div class="fg"><label style="color:#1d4ed8">Preferred Time</label><input type="time" id="ft" style="border-color:rgba(10,20,40,.15);background:rgba(10,20,40,.04);color:#0a1428"></div>
+      </div>
+      <div class="fg"><label style="color:#1d4ed8">Notes</label><textarea id="fn2" rows="3" placeholder="Location, details, or anything else..." style="border-color:rgba(10,20,40,.15);background:rgba(10,20,40,.04);color:#0a1428"></textarea></div>
+      <button class="subtn" onclick="gSubmit()" style="background:#1d4ed8;color:#f8fbff">Request Appointment &#8594;</button>
+      <p style="margin-top:14px;font-size:12px;opacity:.45;text-align:center">&#10003; Confirmation within 2 hours &nbsp;&#183;&nbsp; No payment required</p>
+    </div>
+  </div>
+</div>
+<div class="csec" id="contact">
+  <div class="accent-line" style="margin:0 auto 16px"></div>
+  <span class="eyebrow">Call or Text</span>
+  <h2 class="section-h2">Reach Us Anytime</h2>
+  <a href="tel:4072369997" class="big-phone">(407) 236-9997</a>
+  
+  <p style="font-size:13px;color:rgba(10,20,40,.55);margin-top:14px">Serving Orlando &middot; Kissimmee &middot; Winter Park &middot; Sanford &middot; Oviedo</p>
+</div>
+<footer>&copy; 2026 Visiting Angels Senior Home Care Winter Park &nbsp;&#183;&nbsp; Orlando<br><span style="opacity:.5">Sample site by GDI Web Solutions &nbsp;&#183;&nbsp; winterparkseniorcareangels.com</span></footer>
+<script>
+(()=>{
+// 1. Scroll progress bar
+const pb=document.createElement('div');
+pb.style.cssText='position:fixed;top:0;left:0;height:3px;background:#1d4ed8;z-index:10000;width:0;transition:width .1s linear;pointer-events:none;border-radius:0 2px 2px 0';
+document.body.appendChild(pb);
+// 2. Cursor spotlight
+const cs=document.createElement('div');
+cs.className='cursor-spotlight';
+document.body.appendChild(cs);
+let csOn=false;
+document.addEventListener('mousemove',(e)=>{
+  cs.style.left=e.clientX+'px';cs.style.top=e.clientY+'px';
+  if(!csOn){cs.style.opacity='1';csOn=true;}
+},{passive:true});
+document.addEventListener('mouseleave',()=>{cs.style.opacity='0';csOn=false;});
+// 3. Sticky CTA + progress
+const sc=document.getElementById('sticky-cta');
+const hero=document.querySelector('.hero,.hero-wrap');
+let lastSc=false;
+window.addEventListener('scroll',()=>{
+  const pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  pb.style.width=Math.min(pct,100)+'%';
+  if(sc&&hero){
+    const past=window.scrollY>hero.offsetHeight*.65;
+    if(past!==lastSc){
+      sc.style.opacity=past?'1':'0';
+      sc.style.transform=past?'translateY(0)':'translateY(100%)';
+      sc.style.pointerEvents=past?'auto':'none';
+      lastSc=past;
+    }
+  }
+},{passive:true});
+// 4. Stagger IntersectionObserver
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:0.08,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.animate').forEach((el,idx)=>{
+  if(!el.dataset.delay){
+    const sibs=el.parentElement?Array.from(el.parentElement.querySelectorAll(':scope>.animate')):[];
+    const si=sibs.indexOf(el);
+    if(si>0&&!el.style.transitionDelay)el.style.transitionDelay=(si*.07)+'s';
+  }
+  obs.observe(el);
+});
+// 5. Count-up
+function cUp(el){
+  const t=parseInt(el.dataset.target);if(!t||t<2)return;
+  const step=t/(1800/16);let c=0;
+  const iv=setInterval(()=>{c=Math.min(c+step,t);el.textContent=Math.round(c).toLocaleString();if(c>=t)clearInterval(iv);},16);
+}
+document.querySelectorAll('[data-target]').forEach(el=>{
+  const io=new IntersectionObserver(en=>{if(en[0].isIntersecting){cUp(el);io.disconnect();}});io.observe(el);
+});
+// 6. FAQ
+window.gFaq=btn=>{
+  const it=btn.parentElement;const was=it.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!was)it.classList.add('open');
+};
+// 7. Magnetic CTAs (desktop only)
+if(window.innerWidth>768){
+  document.querySelectorAll('.hbtn-p,.nbtn,.mag-btn').forEach(btn=>{
+    btn.addEventListener('mousemove',(e)=>{
+      const r=btn.getBoundingClientRect();
+      const x=(e.clientX-r.left-r.width/2)*.2;
+      const y=(e.clientY-r.top-r.height/2)*.2;
+      btn.style.transform=`translate(${x}px,${y}px)`;
+    });
+    btn.addEventListener('mouseleave',()=>{btn.style.transform='';});
+  });
+  // 8. Card tilt
+  document.querySelectorAll('.tilt-card').forEach(card=>{
+    card.addEventListener('mousemove',(e)=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(700px) rotateY(${x*7}deg) rotateX(${-y*7}deg) translateZ(6px) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='';});
+  });
+}
+// 9. Parallax
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  document.querySelectorAll('[data-parallax]').forEach(el=>{
+    if(!el.closest('.hero'))return;
+    el.style.transform=`translateY(${sy*parseFloat(el.dataset.parallax||'.25')}px)`;
+  });
+},{passive:true});
+// 10. Form submit
+window.gSubmit=()=>{
+  var nm=document.getElementById('fn')?.value||'',
+      ph=document.getElementById('fp')?.value||'',
+      svc=document.getElementById('fs')?.value||'',
+      dt=document.getElementById('fd')?.value||'',
+      tm=document.getElementById('ft')?.value||'',
+      nt=document.getElementById('fn2')?.value||'';
+  if(!nm||!ph||!svc){alert('Please fill in your name, phone, and service needed.');return;}
+  var body='New Booking%0AName: '+encodeURIComponent(nm)+'%0APhone: '+encodeURIComponent(ph)+'%0AService: '+encodeURIComponent(svc)+'%0ADate: '+encodeURIComponent(dt)+'%0ATime: '+encodeURIComponent(tm)+'%0ANotes: '+encodeURIComponent(nt);
+  window.location.href='tel:4072369997';
+  var bf=document.querySelector('.bform');
+  if(bf)bf.innerHTML='<div style="text-align:center;padding:60px 20px"><div style="font-size:56px;margin-bottom:20px">&#10003;</div><h3 style="font-size:22px;margin-bottom:12px;color:#1d4ed8">Request Sent!</h3><p style="opacity:.6">We'll confirm within 2 hours. Call (407) 236-9997 for anything urgent.</p></div>';
+};
+})();
+</script>
+</body></html>
